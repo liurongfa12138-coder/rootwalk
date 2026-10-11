@@ -1,0 +1,541 @@
+{
+  "schema_version": "rootwalk-openrca-suite-v2",
+  "suite_id": "openrca-bank-d9-v2",
+  "environment": "openrca_bank",
+  "timezone": "Asia/Shanghai",
+  "task_index": "task_6",
+  "expected_fault_count": 1,
+  "incident_minutes": 30,
+  "reference_minutes": 30,
+  "selection_rule": "Frozen public-only Bank task_6 cases audited as single-fault component-and-reason tasks; row 123 is excluded only because its required 2021_03_22 telemetry is absent from the pinned mirror.",
+  "selection_hash_contract": "SHA-256 of compact sorted-key JSON plus LF for the ordered row_id/task_index/instruction allowlist projection.",
+  "selection_sha256": "921babc8d78ec3955d0fe55c75a27d2c521d7a5ca629099f37a459954dec356b",
+  "upstream_commit": "c1bd4af7f635171a1c31cdd567c07d698dff6abc",
+  "bank_schema_sha256": "a702127cd22cde022f7f3975c0ab3203c15d8ceb0e74b3357f2615d1fafef987",
+  "cases": [
+    {
+      "row_id": 2,
+      "task_index": "task_6",
+      "instruction_sha256": "84e7f4361164d7bf76e4001f95cfb5e514095fc2f0cde48cb4b3adc2e86442fd",
+      "date": "2021_03_06",
+      "reference_range": {
+        "start": "2021-03-06T05:30:00+08:00",
+        "end": "2021-03-06T06:00:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-06T06:00:00+08:00",
+        "end": "2021-03-06T06:30:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-06T05:30:00+08:00",
+        "end": "2021-03-06T06:30:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 4,
+      "task_index": "task_6",
+      "instruction_sha256": "2671f1fa4500c22d6cb6d3ce53b5e5ee4e9ebd51529dfe0197482ade3eaa6983",
+      "date": "2021_03_06",
+      "reference_range": {
+        "start": "2021-03-06T00:00:00+08:00",
+        "end": "2021-03-06T00:30:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-06T00:30:00+08:00",
+        "end": "2021-03-06T01:00:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-06T00:00:00+08:00",
+        "end": "2021-03-06T01:00:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 9,
+      "task_index": "task_6",
+      "instruction_sha256": "57ba86aba1b93c8b7117924717c16a25d8373d4b847a2cdafaa207f487cb69c7",
+      "date": "2021_03_07",
+      "reference_range": {
+        "start": "2021-03-07T00:00:00+08:00",
+        "end": "2021-03-07T00:30:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-07T00:30:00+08:00",
+        "end": "2021-03-07T01:00:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-07T00:00:00+08:00",
+        "end": "2021-03-07T01:00:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 17,
+      "task_index": "task_6",
+      "instruction_sha256": "f4ae61f3de172bebb6c1d4c33b8fdd1701d97a416f9aac77d065ac7d060e9a1a",
+      "date": "2021_03_09",
+      "reference_range": {
+        "start": "2021-03-09T10:30:00+08:00",
+        "end": "2021-03-09T11:00:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-09T11:00:00+08:00",
+        "end": "2021-03-09T11:30:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-09T10:30:00+08:00",
+        "end": "2021-03-09T11:30:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 18,
+      "task_index": "task_6",
+      "instruction_sha256": "4bbbea6dcbb4796c264b876ed943258bbc029bc8a95faa4713b37e36b7195b82",
+      "date": "2021_03_09",
+      "reference_range": {
+        "start": "2021-03-09T12:30:00+08:00",
+        "end": "2021-03-09T13:00:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-09T13:00:00+08:00",
+        "end": "2021-03-09T13:30:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-09T12:30:00+08:00",
+        "end": "2021-03-09T13:30:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 24,
+      "task_index": "task_6",
+      "instruction_sha256": "ebf18e99d952d5913e983f3d3157c553ce0917b73d312237697886fe59281011",
+      "date": "2021_03_09",
+      "reference_range": {
+        "start": "2021-03-09T20:30:00+08:00",
+        "end": "2021-03-09T21:00:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-09T21:00:00+08:00",
+        "end": "2021-03-09T21:30:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-09T20:30:00+08:00",
+        "end": "2021-03-09T21:30:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 59,
+      "task_index": "task_6",
+      "instruction_sha256": "e2f56d623472d5f4d319efa7ca2d13a0e24820890da8e12e28f559121bec146a",
+      "date": "2021_03_09",
+      "reference_range": {
+        "start": "2021-03-09T15:00:00+08:00",
+        "end": "2021-03-09T15:30:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-09T15:30:00+08:00",
+        "end": "2021-03-09T16:00:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-09T15:00:00+08:00",
+        "end": "2021-03-09T16:00:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 71,
+      "task_index": "task_6",
+      "instruction_sha256": "e68f3ffc8f6017a4aba0c5be25d802a957f453a4218963319802b87b9422dd42",
+      "date": "2021_03_06",
+      "reference_range": {
+        "start": "2021-03-06T03:00:00+08:00",
+        "end": "2021-03-06T03:30:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-06T03:30:00+08:00",
+        "end": "2021-03-06T04:00:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-06T03:00:00+08:00",
+        "end": "2021-03-06T04:00:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 72,
+      "task_index": "task_6",
+      "instruction_sha256": "7c1f58074d531c897c57f890348a60e3d6c57951e9dc07bf240cd462e23d82f1",
+      "date": "2021_03_06",
+      "reference_range": {
+        "start": "2021-03-06T20:00:00+08:00",
+        "end": "2021-03-06T20:30:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-06T20:30:00+08:00",
+        "end": "2021-03-06T21:00:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-06T20:00:00+08:00",
+        "end": "2021-03-06T21:00:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 75,
+      "task_index": "task_6",
+      "instruction_sha256": "bed0a1ba3eaca6eac54c8802e7f8653d84232737bdfec2b04992796b81f3a5dc",
+      "date": "2021_03_07",
+      "reference_range": {
+        "start": "2021-03-07T07:30:00+08:00",
+        "end": "2021-03-07T08:00:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-07T08:00:00+08:00",
+        "end": "2021-03-07T08:30:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-07T07:30:00+08:00",
+        "end": "2021-03-07T08:30:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 76,
+      "task_index": "task_6",
+      "instruction_sha256": "6d272cc6d1a57b36dfd7b77e9edb99360de2add0615c3edc8062414b7eae4dce",
+      "date": "2021_03_07",
+      "reference_range": {
+        "start": "2021-03-07T10:30:00+08:00",
+        "end": "2021-03-07T11:00:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-07T11:00:00+08:00",
+        "end": "2021-03-07T11:30:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-07T10:30:00+08:00",
+        "end": "2021-03-07T11:30:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 100,
+      "task_index": "task_6",
+      "instruction_sha256": "02f144b5cc6c69adaf0a52a5ad7a29cfb59a4d7e183b6054e8d1d85a2e3ffd26",
+      "date": "2021_03_24",
+      "reference_range": {
+        "start": "2021-03-24T18:30:00+08:00",
+        "end": "2021-03-24T19:00:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-24T19:00:00+08:00",
+        "end": "2021-03-24T19:30:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-24T18:30:00+08:00",
+        "end": "2021-03-24T19:30:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 105,
+      "task_index": "task_6",
+      "instruction_sha256": "99a42c9b9c6b2f5d61edef866b7f1b4d77f66c9e3cc419d661897a1bbacdac09",
+      "date": "2021_03_25",
+      "reference_range": {
+        "start": "2021-03-25T14:00:00+08:00",
+        "end": "2021-03-25T14:30:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-25T14:30:00+08:00",
+        "end": "2021-03-25T15:00:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-25T14:00:00+08:00",
+        "end": "2021-03-25T15:00:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 115,
+      "task_index": "task_6",
+      "instruction_sha256": "2467188409030454c66f71264e3a37b143094c206cfc44b16a21ca54edc23f65",
+      "date": "2021_03_23",
+      "reference_range": {
+        "start": "2021-03-23T00:30:00+08:00",
+        "end": "2021-03-23T01:00:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-23T01:00:00+08:00",
+        "end": "2021-03-23T01:30:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-23T00:30:00+08:00",
+        "end": "2021-03-23T01:30:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 122,
+      "task_index": "task_6",
+      "instruction_sha256": "b22835f3ee4feaaa690870f0b88c6844c9140019460aae5290e18aeb6fccc9e6",
+      "date": "2021_03_25",
+      "reference_range": {
+        "start": "2021-03-25T08:30:00+08:00",
+        "end": "2021-03-25T09:00:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-25T09:00:00+08:00",
+        "end": "2021-03-25T09:30:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-25T08:30:00+08:00",
+        "end": "2021-03-25T09:30:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 124,
+      "task_index": "task_6",
+      "instruction_sha256": "26901dc0a00941042042d2487a280de476cd66b00fbe45948e6c0f43b8755c14",
+      "date": "2021_03_23",
+      "reference_range": {
+        "start": "2021-03-23T18:00:00+08:00",
+        "end": "2021-03-23T18:30:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-23T18:30:00+08:00",
+        "end": "2021-03-23T19:00:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-23T18:00:00+08:00",
+        "end": "2021-03-23T19:00:00+08:00",
+        "end_exclusive": true
+      }
+    },
+    {
+      "row_id": 128,
+      "task_index": "task_6",
+      "instruction_sha256": "fa013187735bf1d1dd83ec637e9632827ffb70eeb95dc7f6439d3113b7e74dee",
+      "date": "2021_03_25",
+      "reference_range": {
+        "start": "2021-03-25T11:00:00+08:00",
+        "end": "2021-03-25T11:30:00+08:00",
+        "end_exclusive": true
+      },
+      "incident_range": {
+        "start": "2021-03-25T11:30:00+08:00",
+        "end": "2021-03-25T12:00:00+08:00",
+        "end_exclusive": true
+      },
+      "allowed_query_range": {
+        "start": "2021-03-25T11:00:00+08:00",
+        "end": "2021-03-25T12:00:00+08:00",
+        "end_exclusive": true
+      }
+    }
+  ],
+  "case_plan_sha256": "c8c4f6acbec6371bdc7423dab98aec779285597390d5cdf26b0e55e87a161819",
+  "source_mirror": {
+    "repository": "cdreetz/OpenRCA",
+    "repository_type": "dataset",
+    "commit": "7a29a7c3600cc07b7760a6c5097d36ac8573f039",
+    "url_template": "https://hf-mirror.com/datasets/{repository}/resolve/{commit}/{path}?download=true",
+    "excluded_cases": [
+      {
+        "row_id": 123,
+        "reason": "required telemetry date 2021_03_22 is absent from the pinned mirror"
+      }
+    ]
+  },
+  "source_files": [
+    {
+      "path": "Bank/query.csv",
+      "bytes": 56803,
+      "sha256": "605d3b5c863928caf1611d97858379765858595e150efad2f77d2f733774f588"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_06/log/log_service.csv",
+      "bytes": 328804568,
+      "sha256": "d0e6f8b7595cf35f5581ffad647dff953bceaa8e7e1b2bb7b3b412b181d0888f"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_06/metric/metric_app.csv",
+      "bytes": 639422,
+      "sha256": "883ec49b01c12a464064dc055e6ab7e0dfd2943d55f7f8b1d1fe512961969776"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_06/metric/metric_container.csv",
+      "bytes": 84110809,
+      "sha256": "02990d27fa4680e9116ff3086e180beff919254031b7214c6c37d965eba55e41"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_06/trace/trace_span.csv",
+      "bytes": 2632745307,
+      "sha256": "eb5b405a47b425b4629abab6f1a2bd4b296c01d6d4c487d45e5344ea755120bb"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_07/log/log_service.csv",
+      "bytes": 416743389,
+      "sha256": "ff1f16010635cea3c1c98b5f2b4053f3755079604d3658e506281111d4939ffe"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_07/metric/metric_app.csv",
+      "bytes": 639097,
+      "sha256": "fa12343359c84d96c51ccc4f896ec3cd1afa159e6ecd2a145f27ddbe4cfdb578"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_07/metric/metric_container.csv",
+      "bytes": 84638758,
+      "sha256": "56e7b482592cec731f3a5b7c1ccbe2cef5876d5cab1a2950d8acda4a8a7adffc"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_07/trace/trace_span.csv",
+      "bytes": 2474565687,
+      "sha256": "9d21307f9c37a9f82b2436b371a8985c8450011bbf2d9826bf48edcca66c3029"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_09/log/log_service.csv",
+      "bytes": 375183054,
+      "sha256": "ddbce54377f1e3a8cc8aef3da48fbfcea9b09c845ca4f61116fc7980df379f23"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_09/metric/metric_app.csv",
+      "bytes": 673884,
+      "sha256": "7f04d52a1892a04a44ba7ffda0dda6760b4107201bfb16c8fdaac724a9d69dd7"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_09/metric/metric_container.csv",
+      "bytes": 83866542,
+      "sha256": "7bc517bc31904212e02c28cfefa06d4c01096017913463bfdae72035c5ab98ca"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_09/trace/trace_span.csv",
+      "bytes": 2377970111,
+      "sha256": "a102bf1b4aaf7d1eb0c54d3f90a0dee516e6a74797b21f85740ceb5cee0cc050"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_23/log/log_service.csv",
+      "bytes": 447369934,
+      "sha256": "852fdc22350ac1924a1eab4924ff69daba00b80a36af5d51d0179d8d701eef7d"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_23/metric/metric_app.csv",
+      "bytes": 629656,
+      "sha256": "133d45187276dd3331ef70a449a64e47f597dfbebdd102d581e19e6d05ea1d7b"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_23/metric/metric_container.csv",
+      "bytes": 77007359,
+      "sha256": "db374c935356344828a09f19c6751afb5f47b5334102f04c410a1492981860f8"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_23/trace/trace_span.csv",
+      "bytes": 2469840756,
+      "sha256": "af297e6864fb11e69e4adf9f1d05df18f4f44af7da2b6039ca5ba06327675018"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_24/log/log_service.csv",
+      "bytes": 435708516,
+      "sha256": "ad8abba0fa744ef0af340fdf2189cb8c898eb6c753bf236bc78833146d99e9c4"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_24/metric/metric_app.csv",
+      "bytes": 640570,
+      "sha256": "1d32a96751d9008539f81b4ec7ea4e4d5f5c0ac5df078c2af366ddd817e9fca6"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_24/metric/metric_container.csv",
+      "bytes": 76856235,
+      "sha256": "00875da15a0a7a78e3e5591c76d6147d19f4fbff965824bc0b3f240b75e50dc7"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_24/trace/trace_span.csv",
+      "bytes": 2484272191,
+      "sha256": "6531c34c2041ed24cd939cfa8f28ce2b4984210cec23e02c130de461a54cfd35"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_25/log/log_service.csv",
+      "bytes": 447317896,
+      "sha256": "3163a2404ce702213d6ec364b86d05b925aa8024e196aee3da05579764a8e43f"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_25/metric/metric_app.csv",
+      "bytes": 633446,
+      "sha256": "c4b0a6d42d4434d361aa0f310c8a25dc6227eade626d0f571d01dcd4bf67b11a"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_25/metric/metric_container.csv",
+      "bytes": 89559550,
+      "sha256": "9286270dfb1386186b7c8bf7f7556b1854226ac052bd2a03daab14197da3e7ff"
+    },
+    {
+      "path": "Bank/telemetry/2021_03_25/trace/trace_span.csv",
+      "bytes": 2578501342,
+      "sha256": "e4b98cd140223edcad4311c71bbf9a70dc5f95d528a3ff6ca9ab8b35fe98581b"
+    }
+  ],
+  "source_files_sha256": "fe62934a0e800e6f37c30a5ed02d88f043584ef061b5fa376daf214c4a94b7b6",
+  "source_total_bytes": 17968974882,
+  "compatibility_anchor": {
+    "date": "2021_03_04",
+    "source_files": [
+      {
+        "path": "Bank/telemetry/2021_03_04/log/log_service.csv",
+        "bytes": 214194991,
+        "sha256": "66e45f613e8a515eb7c6b4d6a1fdc59ed729c999ec190eef8bf842dffcd02e4d"
+      },
+      {
+        "path": "Bank/telemetry/2021_03_04/metric/metric_app.csv",
+        "bytes": 617331,
+        "sha256": "80932766feb1a7611a17ed27a8070b044f429b69138c1ab3cb2e501fa45300c1"
+      },
+      {
+        "path": "Bank/telemetry/2021_03_04/metric/metric_container.csv",
+        "bytes": 86066591,
+        "sha256": "5029de2cf5290101434059bbe06a31cd39c2b407d0125a46846000f3f72e791d"
+      },
+      {
+        "path": "Bank/telemetry/2021_03_04/trace/trace_span.csv",
+        "bytes": 1256254711,
+        "sha256": "b0babcbd67be0e68b7970151733cfa4d9e1ae60668e15a0f32281362a2a8f545"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "source_revision": "7a29a7c3600cc07b7760a6c5097d36ac8573f039",
+  "cases": [
+    {
+      "row_id": 34,
+      "task_index": "task_7",
+      "question": "Within the time range of May 27, 2020, from 02:30 to 03:00, there was one failure detected in the system. The specific component responsible for this failure, the exact occurrence time, and the underlying reason for the failure are all currently unknown. You are tasked with identifying the root cause component, the root cause occurrence datetime, and the root cause reason.",
+      "reference_start": "2020-05-27T02:00:00+08:00",
+      "reference_end": "2020-05-27T02:30:00+08:00",
+      "incident_start": "2020-05-27T02:30:00+08:00",
+      "incident_end": "2020-05-27T03:00:00+08:00"
+    }
+  ]
+}

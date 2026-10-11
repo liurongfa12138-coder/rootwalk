@@ -1,0 +1,1 @@
+{"decision_summary":"Stage a local zero-step path only to exercise path validation.","operations":[{"hypothesis_id":"public-example:hypothesis:decision:public-example:0003:0","root_cause_entity_id":"bank:entity:Tomcat01","steps":[],"symptom_entity_ids":["bank:entity:Tomcat01"],"type":"submit_path"}]}

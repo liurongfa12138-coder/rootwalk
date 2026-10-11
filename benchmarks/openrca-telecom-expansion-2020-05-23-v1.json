@@ -1,0 +1,32 @@
+{
+  "source_revision": "7a29a7c3600cc07b7760a6c5097d36ac8573f039",
+  "cases": [
+    {
+      "row_id": 11,
+      "task_index": "task_6",
+      "question": "During the specified time range of May 23, 2020, from 00:30 to 01:00, the system experienced one failure. The exact component affected and the reason for this failure are unknown. Please identify the root cause component and the root cause reason.",
+      "reference_start": "2020-05-23T00:00:00+08:00",
+      "reference_end": "2020-05-23T00:30:00+08:00",
+      "incident_start": "2020-05-23T00:30:00+08:00",
+      "incident_end": "2020-05-23T01:00:00+08:00"
+    },
+    {
+      "row_id": 12,
+      "task_index": "task_7",
+      "question": "There was one failure reported within the specified time range of May 23, 2020, from 01:00 to 01:30. The component responsible for the failure, the exact time of the root cause occurrence, and the underlying reason for this failure are currently unknown. Please identify the root cause component, the root cause occurrence datetime, and the root cause reason.",
+      "reference_start": "2020-05-23T00:30:00+08:00",
+      "reference_end": "2020-05-23T01:00:00+08:00",
+      "incident_start": "2020-05-23T01:00:00+08:00",
+      "incident_end": "2020-05-23T01:30:00+08:00"
+    },
+    {
+      "row_id": 15,
+      "task_index": "task_7",
+      "question": "Within the time range of May 23, 2020, from 04:30 to 05:00, there was one failure reported. The component responsible for this failure, the exact time of occurrence, and the underlying reason are currently unknown. You are tasked with identifying the root cause occurrence datetime, the root cause component, and the root cause reason.",
+      "reference_start": "2020-05-23T04:00:00+08:00",
+      "reference_end": "2020-05-23T04:30:00+08:00",
+      "incident_start": "2020-05-23T04:30:00+08:00",
+      "incident_end": "2020-05-23T05:00:00+08:00"
+    }
+  ]
+}

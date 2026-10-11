@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rootwalk"
+version = "0.2.7"
+description = "An evidence-grounded RCA agent harness."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md", "third_party/OpenRCA-LICENSE"]
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "langgraph>=1.2,<2",
+    "langgraph-checkpoint-sqlite>=3.1,<4",
+    "opentelemetry-api>=1.38,<2",
+    "opentelemetry-sdk>=1.38,<2",
+    "opentelemetry-exporter-otlp-proto-http>=1.38,<2",
+    "pydantic>=2.13,<3",
+    "typer>=0.12,<1",
+    "volcengine-python-sdk[ark]>=5.0,<6",
+]
+
+[project.scripts]
+rootwalk = "rootwalk.cli:app"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1,<2",
+    "pytest>=8,<9",
+    "ruff>=0.11,<1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "openrca_bank: requires a separately downloaded official OpenRCA Bank public_input",
+]
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pyright]
+include = ["src", "tests"]
+pythonVersion = "3.11"
+typeCheckingMode = "strict"
+
+[tool.hatch.build]
+exclude = [
+    "/.impeccable",
+    "/.venv",
+    "/apps/viewer/.impeccable",
+    "/apps/viewer/dist",
+    "/apps/viewer/node_modules",
+    "/dist",
+    "/runs",
+    "*.tsbuildinfo",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rootwalk"]

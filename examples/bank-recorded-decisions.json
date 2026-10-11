@@ -1,0 +1,80 @@
+[
+  {
+    "decision_summary": "Run the required broad overview for the synthetic fixture.",
+    "operations": [
+      {
+        "type": "query",
+        "tool": "summarize_anomalies",
+        "arguments": {}
+      }
+    ]
+  },
+  {
+    "decision_summary": "Read the synthetic CPU series in both comparison windows.",
+    "operations": [
+      {
+        "type": "query",
+        "tool": "query_metric",
+        "arguments": {
+          "entity_id": "bank:entity:Tomcat01",
+          "metric_id": "OSLinux-CPU_CPU_CPUCpuUtil",
+          "period": "reference"
+        }
+      },
+      {
+        "type": "query",
+        "tool": "query_metric",
+        "arguments": {
+          "entity_id": "bank:entity:Tomcat01",
+          "metric_id": "OSLinux-CPU_CPU_CPUCpuUtil",
+          "period": "incident"
+        }
+      }
+    ]
+  },
+  {
+    "decision_summary": "Record an inconclusive synthetic hypothesis for protocol testing.",
+    "operations": [
+      {
+        "type": "update_hypothesis",
+        "action": "create",
+        "subject": "bank:entity:Tomcat01",
+        "statement": "A synthetic CPU series changed during the incident window; this fixture does not establish root cause.",
+        "status": "inconclusive",
+        "supporting_evidence_refs": [
+          "public-example:evidence:decision:public-example:0002:0",
+          "public-example:evidence:decision:public-example:0002:1"
+        ],
+        "open_questions": [
+          "A live model must inspect additional evidence before making an RCA finding."
+        ]
+      }
+    ]
+  },
+  {
+    "decision_summary": "Stage a local zero-step path only to exercise path validation.",
+    "operations": [
+      {
+        "type": "submit_path",
+        "hypothesis_id": "public-example:hypothesis:decision:public-example:0003:0",
+        "root_cause_entity_id": "bank:entity:Tomcat01",
+        "symptom_entity_ids": [
+          "bank:entity:Tomcat01"
+        ],
+        "steps": []
+      }
+    ]
+  },
+  {
+    "decision_summary": "Finalize the synthetic protocol fixture with uncertainty disclosed.",
+    "operations": [
+      {
+        "type": "finalize",
+        "unresolved_questions": [
+          "The synthetic fixture is intentionally inconclusive."
+        ],
+        "abstain_reason": "This is a synthetic protocol fixture, not a model diagnosis."
+      }
+    ]
+  }
+]

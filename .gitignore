@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.pyright/
+.env.langfuse
+.env
+.env.*
+!.env.langfuse.example
+*.key
+*.pem
+credentials.json
+dist/
+.*.work/
+runs/
+.gdpa

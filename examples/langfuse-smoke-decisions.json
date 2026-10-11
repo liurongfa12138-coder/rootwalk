@@ -1,0 +1,21 @@
+[
+  {
+    "decision_summary": "Inspect the public anomaly overview for the tracing smoke test.",
+    "operations": [
+      {
+        "type": "query",
+        "tool": "summarize_anomalies",
+        "arguments": {}
+      }
+    ]
+  },
+  {
+    "decision_summary": "Finish the tracing smoke test without making an RCA claim.",
+    "operations": [
+      {
+        "type": "finalize",
+        "abstain_reason": "Observability smoke test only; no root-cause conclusion requested."
+      }
+    ]
+  }
+]

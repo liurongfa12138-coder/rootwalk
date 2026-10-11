@@ -1,0 +1,1 @@
+{"decision_summary":"Run the required broad overview for the synthetic fixture.","operations":[{"arguments":{},"tool":"summarize_anomalies","type":"query"}]}

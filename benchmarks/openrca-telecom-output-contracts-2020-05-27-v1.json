@@ -1,0 +1,32 @@
+{
+  "source_revision": "7a29a7c3600cc07b7760a6c5097d36ac8573f039",
+  "cases": [
+    {
+      "row_id": 30,
+      "task_index": "task_3",
+      "question": "There was one failure within the specified time range of May 27, 2020, from 00:30 to 01:00. The exact component responsible for this failure is currently unknown. Please identify the root cause component.",
+      "reference_start": "2020-05-27T00:00:00+08:00",
+      "reference_end": "2020-05-27T00:30:00+08:00",
+      "incident_start": "2020-05-27T00:30:00+08:00",
+      "incident_end": "2020-05-27T01:00:00+08:00"
+    },
+    {
+      "row_id": 31,
+      "task_index": "task_4",
+      "question": "During the specified time range of May 27, 2020, from 01:00 to 01:30, there was a failure reported in the system. The exact occurrence time of the root cause and the underlying reason for the failure are currently unknown. Please identify the root cause occurrence datetime and the root cause reason.",
+      "reference_start": "2020-05-27T00:30:00+08:00",
+      "reference_end": "2020-05-27T01:00:00+08:00",
+      "incident_start": "2020-05-27T01:00:00+08:00",
+      "incident_end": "2020-05-27T01:30:00+08:00"
+    },
+    {
+      "row_id": 36,
+      "task_index": "task_4",
+      "question": "There was one failure recorded during the time range of May 27, 2020, from 05:30 to 06:00. The specific time when the root cause occurred and the reason for this failure are currently unknown. You need to identify the root cause occurrence datetime and the root cause reason.",
+      "reference_start": "2020-05-27T05:00:00+08:00",
+      "reference_end": "2020-05-27T05:30:00+08:00",
+      "incident_start": "2020-05-27T05:30:00+08:00",
+      "incident_end": "2020-05-27T06:00:00+08:00"
+    }
+  ]
+}
