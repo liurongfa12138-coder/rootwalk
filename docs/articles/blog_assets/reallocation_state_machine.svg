@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">跨机房库存调拨状态机</title>
+  <desc id="desc">调拨先扣减来源库存，再增加目标库存；部分扣减失败进入回滚，目标增加失败持续正向重试，进程中断由扫描器从持久化节点恢复。</desc>
+  <style>
+    text { fill: #20242c; font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .heading { font-size: 28px; font-weight: 700; }
+    .lane-title { font-size: 20px; font-weight: 700; }
+    .node-title { font-size: 17px; font-weight: 650; text-anchor: middle; }
+    .copy { font-size: 14px; fill: #596274; text-anchor: middle; }
+    .edge-label { font-size: 14px; font-weight: 650; paint-order: stroke; stroke: #ffffff; stroke-width: 5px; text-anchor: middle; }
+    .lane { stroke: #c8d0dc; stroke-width: 1.6; rx: 8; }
+    .forward-lane { fill: #eaf7ef; }
+    .recover-lane { fill: #f2ebfc; }
+    .node { fill: #ffffff; stroke: #20242c; stroke-width: 1.7; rx: 6; }
+    .forward { fill: #e2f3e7; }
+    .truth { fill: #f9e9ad; }
+    .recover { fill: #eee5fb; }
+    .done { fill: #e4eefc; stroke: #2d6cdf; stroke-width: 2; }
+    .flow { fill: none; stroke-width: 2.3; }
+    .sync { stroke: #2f8f5b; marker-end: url(#arrow-sync); }
+    .async { stroke: #7e57c2; stroke-dasharray: 8 6; marker-end: url(#arrow-async); }
+    .error { stroke: #e53935; stroke-dasharray: 5 5; marker-end: url(#arrow-error); }
+    .focus { fill: #e53935; font-size: 20px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="arrow-sync" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="#2f8f5b"/></marker>
+    <marker id="arrow-async" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="#7e57c2"/></marker>
+    <marker id="arrow-error" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="#e53935"/></marker>
+  </defs>
+
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <text class="heading" x="48" y="50">先减后加：用持久化状态机处理跨机房部分失败</text>
+
+  <rect class="lane forward-lane" x="48" y="86" width="1104" height="252"/>
+  <text class="lane-title" x="74" y="122">正向流程</text>
+  <rect class="node" x="86" y="172" width="150" height="82"/>
+  <text class="node-title" x="161" y="204">创建任务</text>
+  <text class="copy" x="161" y="231">写 flow_id 与参数</text>
+  <rect class="node" x="286" y="172" width="150" height="82"/>
+  <text class="node-title" x="361" y="204">加 Unit 锁</text>
+  <text class="copy" x="361" y="231">加载并计算变化量</text>
+  <rect class="node truth" x="486" y="160" width="170" height="106"/>
+  <text class="focus" x="630" y="185">★</text>
+  <text class="node-title" x="571" y="198">扣减来源库存</text>
+  <text class="copy" x="571" y="226">本地事务 + 正向流水</text>
+  <text class="copy" x="571" y="249">记录成功子集</text>
+  <rect class="node truth" x="706" y="160" width="170" height="106"/>
+  <text class="node-title" x="791" y="198">增加目标库存</text>
+  <text class="copy" x="791" y="226">相同幂等语义</text>
+  <text class="copy" x="791" y="249">失败保持正向重试</text>
+  <rect class="node done" x="936" y="172" width="150" height="82"/>
+  <text class="node-title" x="1011" y="204">完成</text>
+  <text class="copy" x="1011" y="231">释放锁并封存明细</text>
+  <path class="flow sync" d="M236 213H286"/>
+  <path class="flow sync" d="M436 213H486"/>
+  <path class="flow sync" d="M656 213H706"/>
+  <path class="flow sync" d="M876 213H936"/>
+  <text class="edge-label" x="681" y="199">全部扣减成功</text>
+
+  <rect class="lane recover-lane" x="48" y="366" width="1104" height="330"/>
+  <text class="lane-title" x="74" y="402">异常分支与幂等恢复</text>
+  <rect class="node recover" x="100" y="452" width="220" height="96"/>
+  <text class="node-title" x="210" y="484">执行前失败</text>
+  <text class="copy" x="210" y="512">库存未修改</text>
+  <text class="copy" x="210" y="533">结束或安全重试</text>
+  <rect class="node recover" x="365" y="440" width="220" height="120"/>
+  <text class="node-title" x="475" y="472">来源部分扣减失败</text>
+  <text class="copy" x="475" y="500">只回滚成功子集</text>
+  <text class="copy" x="475" y="524">空回滚写 0 数量流水</text>
+  <text class="copy" x="475" y="548">回滚失败持续重试</text>
+  <rect class="node recover" x="630" y="440" width="220" height="120"/>
+  <text class="node-title" x="740" y="472">结果未知 / 目标失败</text>
+  <text class="copy" x="740" y="500">相同幂等键重试</text>
+  <text class="copy" x="740" y="524">查正向流水确认事实</text>
+  <text class="copy" x="740" y="548">目标增加坚持正向完成</text>
+  <rect class="node recover" x="895" y="452" width="220" height="96"/>
+  <text class="node-title" x="1005" y="484">进程中断</text>
+  <text class="copy" x="1005" y="512">扫描未完成任务</text>
+  <text class="copy" x="1005" y="533">从持久化节点恢复</text>
+
+  <path class="flow error" d="M361 254V412H210V452"/>
+  <text class="edge-label" x="300" y="432">加锁 / 加载失败</text>
+  <path class="flow error" d="M571 266V412H475V440"/>
+  <text class="edge-label" x="522" y="400">部分成功</text>
+  <path class="flow error" d="M791 266V412H740V440"/>
+  <text class="edge-label" x="766" y="400">超时或增加失败</text>
+  <path class="flow async" d="M1005 452V412H846V320H791V266"/>
+  <text class="edge-label" x="938" y="400">扫描接管</text>
+  <path class="flow async" d="M475 560V622H571V266"/>
+  <text class="edge-label" x="530" y="610">回滚成功后结束</text>
+  <path class="flow async" d="M740 560V640H791V266"/>
+  <text class="edge-label" x="790" y="628">正向恢复</text>
+  <text class="copy" x="600" y="675">任务表记录流程进度；库存流水证明每一步是否真正生效</text>
+</svg>
